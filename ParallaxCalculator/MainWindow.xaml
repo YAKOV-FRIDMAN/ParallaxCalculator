@@ -1,0 +1,98 @@
+﻿<Window x:Class="ParallaxCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParallaxCalculator"
+        mc:Ignorable="d"
+        Title="מדידת פרלקסה" Height="600" Width="1000">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- שורת כפתורי העלאה -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0 0 0 10">
+            <Button Content="העלה תמונה 1" Click="LoadImage1_Click" Margin="5"/>
+            <Button Content="העלה תמונה 2" Click="LoadImage2_Click" Margin="5"/>
+        </StackPanel>
+
+        <!-- שתי התמונות -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <!-- תמונה ראשונה -->
+            <ScrollViewer Grid.Column="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="5">
+                <Grid x:Name="ZoomGrid1">
+                    <Grid.LayoutTransform>
+                        <ScaleTransform x:Name="ZoomTransform1" ScaleX="1" ScaleY="1"/>
+                    </Grid.LayoutTransform>
+                    <Image x:Name="Image1" Stretch="None"/>
+
+                    <Canvas x:Name="Canvas1" Background="Transparent"
+                        MouseLeftButtonDown="Image1_MouseLeftButtonDown"
+                        MouseMove="Canvas1_MouseMove"
+                        MouseLeftButtonUp="Canvas1_MouseLeftButtonUp">
+                    </Canvas>
+                </Grid>
+            </ScrollViewer>
+
+            <!-- תמונה שניה -->
+            <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="5">
+                <Grid x:Name="ZoomGrid2">
+                    <Grid.LayoutTransform>
+                        <ScaleTransform x:Name="ZoomTransform2" ScaleX="1" ScaleY="1"/>
+                    </Grid.LayoutTransform>
+
+                    <Image x:Name="Image2" Stretch="None"/>
+                    <Canvas x:Name="Canvas2" Background="Transparent"
+                        MouseLeftButtonDown="Image2_MouseLeftButtonDown"
+                        MouseMove="Canvas2_MouseMove"
+                        MouseLeftButtonUp="Canvas2_MouseLeftButtonUp">
+                    </Canvas>
+                </Grid>
+            </ScrollViewer>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Content="-"   Margin="4" x:Name="btnZoomOutImg1" Click="btnZoomOutImg1_Click"/>
+                <Button Grid.Column="1" Content="+" Margin="4"  x:Name="btnZoomInnImg1" Click="btnZoomInnImg1_Click"/>
+
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Content="-"   Margin="4" x:Name="btnZoomOutImg2" Click="btnZoomOutImg2_Click"/>
+                <Button Grid.Column="1" Content="+" Margin="4"  x:Name="btnZoomInnImg2" Click="btnZoomInnImg2_Click"/>
+            </Grid>
+        </Grid>
+
+        <!-- שורת הזנת המרחק וכפתור חישוב -->
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0 10">
+            <TextBlock Text="שדה ראייה (FOV) במעלות:" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <TextBox x:Name="FOVInput" Width="60" Margin="5,0"/>
+            
+            <TextBlock Text="מרחק בין נקודות התצפית (בס\מ):" VerticalAlignment="Center"/>
+            <TextBox x:Name="BaseLengthInput" Width="100" Margin="5,0"/>
+            <Button Content="חשב מרחק לאובייקט" Click="Calculate_Click" Margin="10 0"/>
+        </StackPanel>
+
+        <!-- תוצאה -->
+        <TextBlock x:Name="ResultText" Grid.Row="3" FontSize="16" FontWeight="Bold" Foreground="DarkBlue" Margin="0 10"/>
+    </Grid>
+</Window>
