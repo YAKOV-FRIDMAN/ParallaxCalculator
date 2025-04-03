@@ -58,11 +58,15 @@ d = \frac{b/2}{\tan(\theta/2)}
 
  ---
 
- ## 📦 תמונות לדגומה של פרוקסימה קנטאורי כפי שנצפתה לאורך הקו ניו הוריזונס-כדור הארץ
+ ## 📦 תמונות לדגומה של פרוקסימה קנטאורי כפי שנצפתה לאורך הקו ניו הוריזונס-כדור הארץ<p align="center">
+  <img src="https://github.com/user-attachments/assets/24b73d02-6943-4577-8206-8d027bb50889" alt="frame_1" width="400" style="margin-right:20px;">
+  <img src="https://github.com/user-attachments/assets/2540c068-df91-45d3-98f7-aca98723b5c2" alt="frame_2" width="400">
+</p>
 
-
-![frame_1](https://github.com/user-attachments/assets/24b73d02-6943-4577-8206-8d027bb50889)
-![frame_2](https://github.com/user-attachments/assets/2540c068-df91-45d3-98f7-aca98723b5c2)
+<p align="center">
+  <b>תמונה 1</b> – פרוקסימה קנטאורי מנקודת המבט של ניו הוריזונס &nbsp;&nbsp;&nbsp;&nbsp;
+  <b>תמונה 2</b> – פרוקסימה קנטאורי מכדור הארץ
+</p>
 
 
 ---
