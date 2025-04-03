@@ -69,8 +69,9 @@ d = \frac{b/2}{\tan(\theta/2)}
 
 
 ## 📦 צילום מסך
+![Screenshot 2025-04-03 151936](https://github.com/user-attachments/assets/f4971db3-b503-4fd2-908f-ecc3b46fe156)
 
-![Screenshot 2025-04-03 151327](https://github.com/user-attachments/assets/1514795c-5aa3-4ce9-ab21-aac400832116)
+
 
 
 ## 🎯 שימוש
